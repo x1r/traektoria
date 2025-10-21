@@ -8,12 +8,14 @@ import {Pencil} from "lucide-react";
 import {Button} from "@/components/ui/button.tsx";
 import L from "leaflet";
 
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 const DefaultIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow
+    iconSize: [25, 41],
+    iconAnchor: [10, 41],
+    popupAnchor: [2, -40],
+    iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
@@ -86,6 +88,7 @@ export const VehiclesMap: React.FC<VehiclesMapProps> = ({onVehicleClick}) => {
                             <Marker
                                 key={vehicle.id}
                                 position={[vehicle.latitude, vehicle.longitude]}
+
                             >
                                 <Popup>
                                     <div className="p-2 min-w-[200px]">

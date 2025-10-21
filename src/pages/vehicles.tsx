@@ -16,12 +16,9 @@ export const VehiclesPage: React.FC = () => {
     useLayoutEffect(() => {
 
         setLoading(true);
-        console.log("true");
         store.fetchVehicles();
-        console.log("fetchVehicles");
         toast.success("Vehicles loaded");
         setLoading(false);
-        console.log("false", loading);
     }, []);
 
     const handleEditVehicle = (vehicle: Vehicle) => {
