@@ -6,6 +6,17 @@ import {Badge} from "@/components/ui/badge.tsx";
 import "leaflet/dist/leaflet.css";
 import {Pencil} from "lucide-react";
 import {Button} from "@/components/ui/button.tsx";
+import L from "leaflet";
+
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+const DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 
 interface VehiclesMapProps {
